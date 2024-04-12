@@ -8,7 +8,7 @@ function ProductPage() {
         <div classname="Home">
             <h1>ProductPage</h1>
         </div>
-       
+        
     );
 }
 
