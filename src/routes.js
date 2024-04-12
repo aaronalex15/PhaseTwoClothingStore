@@ -1,8 +1,11 @@
+
 import Splash from "./pages/Splash";
 
 const routes = [
     {
-        path: "/"
-        Element: <Splash />
+        path: "/",
+        element: <Splash />
     }
-]
+];
+
+export default routes;
