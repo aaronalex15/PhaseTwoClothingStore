@@ -1,10 +1,12 @@
 import React from "react";
 import Splash from "./Splash"
+import ProductPage from "./ProductPage"
 
 function App() {
 return (
-  <div classname="app">
-    <splash />
+  <div className="App">
+    <Splash />
+    <ProductPage />
 
 
 
