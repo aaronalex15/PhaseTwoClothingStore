@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import ProductList from "./ProductList";
 import { Search } from "@mui/icons-material";
@@ -18,5 +19,17 @@ function ProductPage() {
     
     );
 };
+=======
+import React from 'react';
+
+function ProductPage() {
+    return (
+        <div classname="Home">
+            <h1>ProductPAge</h1>
+        </div>
+    )
+
+}
+>>>>>>> 7594ddb6ba461f2f4767b301313cbbd0f994bc22
 
 export default ProductPage;
