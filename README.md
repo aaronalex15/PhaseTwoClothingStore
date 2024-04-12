@@ -1,6 +1,6 @@
-# E-commerce Clothing SPA
+# Online Clothing Store
 
-This is a single-page application (SPA) that serves as an e-commerce clothing store. Users can view filtered items on page launch, search for specific items, and use a form with multiple filters (size, gender, brand) to further narrow down the items displayed.
+This is a single-page application (SPA) that serves as an e-commerce clothing store. Users can view filtered items on page launch, search for specific items, and use a form with multiple filters (size, gender, brand) to further narrow down the items displayed. User can add items to the cart and remove them.
 
 The application uses React for the frontend and the [Fake Store API](https://fakestoreapi.com/) for fetching data.
 
