@@ -1,7 +1,10 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import Splash from "./pages/Splash";
-import ProductPage from "./components/ProductPage";
+import ProductPage from "./pages/ProductPage";
+
+
+
 const routes = [
   {
     path: "/",

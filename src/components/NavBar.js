@@ -1,8 +1,8 @@
-import { NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
     return (
-    <nav classname="navbar">
+    <nav className="navbar">
     <NavLink to="/">Splash</NavLink>
     
     </nav>
