@@ -19,6 +19,8 @@ function ProductPage() {
                 <ProductList />
             </Container>
         </div>
+
+
     );
 }
 
