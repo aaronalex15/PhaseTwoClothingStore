@@ -15,7 +15,6 @@ function Search() {
   // Function to handle search button click
     const searchProduct = () => {
     if (selectedProduct) {
-      // You can perform further actions here, like fetching detailed information about the selected product
         alert(`Searching for product with ID: ${selectedProduct}`);
     } else {
         alert('Please select a product from the dropdown.');
