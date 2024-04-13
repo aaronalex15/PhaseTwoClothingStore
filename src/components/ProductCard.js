@@ -23,7 +23,6 @@ return (
           <p className="product-price">${price}</p>
           <p className="product-description">{description}</p>
           <p className="product-category">{category}</p>
-          <p className="product-rating">Rating: {products.rating.rate} ({products.rating.count} reviews)</p>
         </div>
       </div>
     // </Card>

@@ -3,6 +3,7 @@ import ProductList from "../components/ProductList";
 import { Search } from "@mui/icons-material";
 import ProductForm from "../components/ProductForm";
 import { Container } from "@mui/material";
+import ProductCard from "../components/ProductCard";
 
 
 function ProductPage() {
@@ -10,11 +11,11 @@ function ProductPage() {
         <div className="Home">
             <h1>ProductPage</h1>
             <Container>
-                <h1> �� Miké(y) �� </h1>
+                <h1> Miké(y) </h1>
                 <br />
                 <Search />
                 <br />
-                {/* <ProductForm /> */}
+                 <ProductCard /> 
                 <br />
                 <ProductList />
             </Container>

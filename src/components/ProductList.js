@@ -7,7 +7,7 @@ function ProductList() {
         <>
         <h1>Latest Arrivals</h1>
         {/* <Card.Group itemsPerRow={3}> */}
-        <ProductCard />
+       
 
         {/* </Card.Group> */}
         </>
