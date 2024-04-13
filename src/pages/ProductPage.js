@@ -14,8 +14,6 @@ function ProductPage() {
 
                 <h1> ROE </h1>
 
-                <h1></h1>
-
                 <br />
                 <Search />
                 <br />
