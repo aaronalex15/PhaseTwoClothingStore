@@ -7,7 +7,7 @@ function App() {
 return (
   <div className="app">
     <Splash />
-
+    
   </div>
   )
 }
