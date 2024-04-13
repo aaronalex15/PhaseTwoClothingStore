@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./splashCover.png";
 import { Link } from "react-router-dom";
-import './splash.css'; /* Import your CSS file */
+import './splash.css'; 
 
 function Splash() {
     return (
