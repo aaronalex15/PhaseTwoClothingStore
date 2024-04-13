@@ -5,13 +5,12 @@ function ProductList() {
 
     const [productList, setProductList] = useState([])
 
-
     useEffect(() => {
         fetch("https://fakestoreapi.com/products")
-        .then((r) => r.json())
-        .then((data) => {
-            setProductList(data);
-        })
+            .then((r) => r.json())
+            .then((data) => {
+                setProductList(data);
+            })
     }, [])
 
     return (
@@ -21,9 +20,10 @@ function ProductList() {
                 <Card key={product.id} style={{ marginBottom: '20px' }}>
                     <CardMedia
                         component="img"
-                        height="140"
+                        height="200"  // Set height to a smaller value
                         image={product.image}
                         alt={product.title}
+                        style={{ objectFit: 'contain' }}  // Ensure the image fits within the card
                     />
                     <CardContent>
                         <Typography variant="h6">{product.title}</Typography>
