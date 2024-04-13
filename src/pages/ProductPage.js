@@ -11,7 +11,7 @@ function ProductPage() {
             <h1>Main-MENU</h1>
             <Container>
 
-                <h1> �� Miké(y) �� </h1>
+                <h1> ROE </h1>
 
                 <h1></h1>
 
