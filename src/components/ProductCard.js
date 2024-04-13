@@ -15,7 +15,7 @@ const products = {
 const { title, price, description, category, image } = products;
 
 return (
-    <Card>
+    // <Card>
     <div className="product-card">
         <img src={image} alt={title} className="product-image" />
         <div className="product-info">
@@ -26,7 +26,7 @@ return (
           <p className="product-rating">Rating: {products.rating.rate} ({products.rating.count} reviews)</p>
         </div>
       </div>
-    </Card>
+    // </Card>
   );
 }
 

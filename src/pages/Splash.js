@@ -8,7 +8,7 @@ function Splash() {
             <header>
                 <h1 >Shop-EASE</h1>
             </header>
-            <Link to="/SHOP">
+            <Link to="/shop">
                 <button>SHOP</button>
             </Link>
         </>

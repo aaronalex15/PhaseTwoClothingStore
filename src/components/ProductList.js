@@ -5,10 +5,11 @@ import {Card} from "@mui/material"
 function ProductList() {
     return (
         <>
-        <ProductCard />
         <h1>Latest Arrivals</h1>
-        <Card.Group itemsPerRow={3}>
-        </Card.Group>
+        {/* <Card.Group itemsPerRow={3}> */}
+        <ProductCard />
+
+        {/* </Card.Group> */}
         </>
     );
 }
