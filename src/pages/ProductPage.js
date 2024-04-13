@@ -10,7 +10,7 @@ function ProductPage() {
         <div className="Home">
             <h1>ProductPage</h1>
             <Container>
-                <h1>  Miké(y)  </h1>
+                <h1> �� Miké(y) �� </h1>
                 <br />
                 <Search />
                 <br />
@@ -19,6 +19,8 @@ function ProductPage() {
                 <ProductList />
             </Container>
         </div>
+
+
     );
 }
 
