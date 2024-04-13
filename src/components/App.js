@@ -1,6 +1,6 @@
 import React from "react";
 import Splash from "./Splash";
-import ProductCard from "./ProductCard";
+
 
 
 function App() {
@@ -13,3 +13,6 @@ return (
 }
 
 export default App;
+
+
+
