@@ -10,6 +10,7 @@ function ProductPage() {
 
     const [product, setProduct] = useState({})
 
+
     useEffect(()=> {
         fetch(`producturl/${id}`).then(r=>r.json()).then(data => {
             setProduct(data)
@@ -20,8 +21,6 @@ function ProductPage() {
         <div className="Home">
             <h1>Product-page</h1>
         </div>
-
-
     );
 }
 

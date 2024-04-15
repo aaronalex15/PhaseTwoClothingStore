@@ -1,0 +1,62 @@
+/* Container to center content */
+.splash-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+}
+
+/* Style for the image */
+.splash-logo {
+    max-width: 100%; /* Prevent the image from exceeding its natural width */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+
+.splash-title {
+    position: absolute;
+    top: 50px;
+    left: 170px;
+    font-family: 'Dancing Script', cursive; 
+    -webkit-text-stroke: .1px white; 
+    margin-left: 2in; 
+    font-size: 3rem; 
+    color: rgb(226, 21, 148);
+    
+
+}
+
+/* Elevate Your Shopping Experience text styling */
+.elevate-text {
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    font-family: 'Dancing Script', cursive; 
+    -webkit-text-stroke: .1px white; 
+    margin-left: 2in; 
+    font-size: 3rem; 
+    color: rgb(226, 21, 148);
+    
+}
+
+
+.centered-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.centered-button:hover {
+    opacity: 0.9;
+}
