@@ -19,7 +19,7 @@ function ProductPage() {
 
     return (
         <div className="Home">
-            <h1>Product-page</h1>
+            <h1>Items In Cart</h1>
         </div>
     );
 }
