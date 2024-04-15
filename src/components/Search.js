@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ProductList from './ProductList'; 
 
 function Search() {
     const [products, setProducts] = useState([]);
@@ -29,11 +30,8 @@ function Search() {
 
     return (
         <>
-            <header>
-                {/* Add header content here if needed */}
-            </header>
+            
             <div style={{ display: 'flex', alignItems: 'center' }}>
-                {/* Styled search bar */}
                 <select
                     value={selectedProduct}
                     onChange={e => setSelectedProduct(e.target.value)}
@@ -68,16 +66,8 @@ function Search() {
                     Search
                 </button>
             </div>
-            {searchedProduct && (
-                <div>
-                    <h2>{searchedProduct.title}</h2>
-                    <img
-                        src={searchedProduct.image}
-                        alt={searchedProduct.title}
-                        style={{ height: '300px', width: '300px', objectFit: 'contain' }}
-                    />
-                </div>
-            )}
+            {}
+            <ProductList selectedProduct={searchedProduct} />
         </>
     );
 }
