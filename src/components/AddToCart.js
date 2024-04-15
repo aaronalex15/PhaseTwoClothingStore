@@ -15,8 +15,7 @@ const AddToCart = ({ id }) => {
                     variant="contained"
                     color="primary"
                     style={{
-                        backgroundColor: 'red', // Customize the background color as desired
-                        color: 'white',
+                        backgroundColor: 'red', 
                         padding: '10px 20px',
                         borderRadius: '5px',
                         fontWeight: 'bold',
@@ -30,4 +29,4 @@ const AddToCart = ({ id }) => {
     );
 };
 
-export default AddToCart;
+export default AddToCart; 

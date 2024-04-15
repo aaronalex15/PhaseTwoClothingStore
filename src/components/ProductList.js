@@ -34,6 +34,9 @@ function ProductList() {
                                 <Typography variant="body2" color="textSecondary">
                                     {product.category}
                                 </Typography>
+                                <Typography variant="h6" color="textPrimary" style={{ marginTop: '10px' }}>
+                                    ${product.price}
+                                </Typography>
                                 <AddToCart id={product.id} />
                             </CardContent>
                         </Card>

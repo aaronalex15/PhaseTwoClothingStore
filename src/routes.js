@@ -1,9 +1,7 @@
 import React from "react";
-import { Route } from "react-router-dom";
-import Splash from "./components/Splash";
+import Splash from "./pages/Splash";
 import MainMenu from "./pages/MainMenu";
-import ProductPage from "./pages/ProductPage";
-
+import Cart from "./pages/Cart";
 
 const routes = [
   {
@@ -16,7 +14,7 @@ const routes = [
   },
   {
     path: "/product/:id",
-    element: <ProductPage />
+    element: <Cart />
   }
 ];
 
