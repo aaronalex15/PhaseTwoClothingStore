@@ -1,28 +1,24 @@
 
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ProductList from "../components/ProductList";
-//import { Search } from "@mui/icons-material";
 import ProductForm from "../components/ProductForm";
 import { Container } from "@mui/material";
-import Search from "../components/Search";
+import {useEffect, useState} from "react"
 
 function ProductPage() {
+    const {id} = useParams()
+
+    const [product, setProduct] = useState({})
+
+    useEffect(()=> {
+        fetch(`producturl/${id}`).then(r=>r.json()).then(data => {
+            setProduct(data)
+        })
+    }, [id])
+
     return (
         <div className="Home">
-            <h1>Main-MENU</h1>
-            <Container>
-
-                <h1> ROE </h1>
-
-                <h1></h1>
-
-                <br />
-                <Search />
-                <br />
-                {/* <ProductForm /> */}
-                <br />
-                <ProductList />
-            </Container>
+            <h1>Product-page</h1>
         </div>
 
 

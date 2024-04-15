@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Card, CardContent, CardMedia, Typography, Button, Grid } from '@mui/material';
+import { Card, CardContent, CardMedia, Typography, Grid } from '@mui/material';
+import AddToCart from './AddToCart'; 
 
 function ProductList() {
-
     const [productList, setProductList] = useState([]);
 
     useEffect(() => {
@@ -40,9 +40,7 @@ function ProductList() {
                                 <Typography variant="body2" color="textSecondary">
                                     {product.category}
                                 </Typography>
-                                <Button variant="contained" color="primary" style={{ marginTop: '10px' }}>
-                                    Add to Cart
-                                </Button>
+                                <AddToCart id={product.id} />
                             </CardContent>
                         </Card>
                     </Grid>
