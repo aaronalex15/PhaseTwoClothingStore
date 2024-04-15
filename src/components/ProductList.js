@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card, CardContent, CardMedia, Typography, Grid } from '@mui/material';
 import AddToCart from './AddToCart';
 
-function ProductList() {
+function ProductList({ selectedProduct }) {
     const [productList, setProductList] = useState([]);
 
     useEffect(() => {
@@ -19,29 +19,53 @@ function ProductList() {
                 Latest Arrivals
             </Typography>
             <Grid container spacing={3}>
-                {productList.map((product) => (
-                    <Grid item xs={12} sm={4} md={4} lg={4} xl={4} key={product.id}>
+                {selectedProduct ? (
+                    <Grid item xs={12} sm={4} md={4} lg={4} xl={4} key={selectedProduct.id}>
                         <Card style={{ backgroundColor: '#FFDAB9' }}>
                             <CardMedia
                                 component="img"
                                 height="200"
-                                image={product.image}
-                                alt={product.title}
+                                image={selectedProduct.image}
+                                alt={selectedProduct.title}
                                 style={{ objectFit: 'contain' }}
                             />
                             <CardContent>
-                                <Typography variant="h6">{product.title}</Typography>
+                                <Typography variant="h6">{selectedProduct.title}</Typography>
                                 <Typography variant="body2" color="textSecondary">
-                                    {product.category}
+                                    {selectedProduct.category}
                                 </Typography>
                                 <Typography variant="h6" color="textPrimary" style={{ marginTop: '10px' }}>
-                                    ${product.price}
+                                    ${selectedProduct.price}
                                 </Typography>
-                                <AddToCart id={product.id} />
+                                <AddToCart id={selectedProduct.id} />
                             </CardContent>
                         </Card>
                     </Grid>
-                ))}
+                ) : (
+                    productList.map((product) => (
+                        <Grid item xs={12} sm={4} md={4} lg={4} xl={4} key={product.id}>
+                            <Card style={{ backgroundColor: '#FFDAB9' }}>
+                                <CardMedia
+                                    component="img"
+                                    height="200"
+                                    image={product.image}
+                                    alt={product.title}
+                                    style={{ objectFit: 'contain' }}
+                                />
+                                <CardContent>
+                                    <Typography variant="h6">{product.title}</Typography>
+                                    <Typography variant="body2" color="textSecondary">
+                                        {product.category}
+                                    </Typography>
+                                    <Typography variant="h6" color="textPrimary" style={{ marginTop: '10px' }}>
+                                        ${product.price}
+                                    </Typography>
+                                    <AddToCart id={product.id} />
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                    ))
+                )}
             </Grid>
         </div>
     );
