@@ -24,7 +24,7 @@ function Search() {
     return (
     <>
         <header>
-        <h1>Shop-EASE</h1>
+
         </header>
         <select value={selectedProduct} onChange={e => setSelectedProduct(e.target.value)}>
         <option value="">Select a product...</option>

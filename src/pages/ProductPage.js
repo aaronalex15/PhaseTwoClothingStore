@@ -9,10 +9,9 @@ import Search from "../components/Search";
 function ProductPage() {
     return (
         <div className="Home">
-            <h1>Main-MENU</h1>
             <Container>
 
-                <h1> ROE </h1>
+            
 
                 <br />
                 <Search />

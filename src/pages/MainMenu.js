@@ -8,9 +8,9 @@ import Search from "../components/Search";
 function MainMenu() {
     return (
         <div className="Home">
-            <h1>Main-MENU</h1>
+           <h1 className="main-title">LuxeMarket</h1>
             <Container>
-                <h1></h1>
+                
                 <br />
                 <Search />
                 <br />
