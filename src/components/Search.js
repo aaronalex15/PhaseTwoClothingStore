@@ -26,26 +26,55 @@ function Search() {
             alert('Please select a product from the dropdown.');
         }
     };
+
     return (
         <>
-            <header></header>
-            <select value={selectedProduct} onChange={e => setSelectedProduct(e.target.value)}>
-                <option value="">Select a product...</option>
-                {products.map(product => (
-                    <option key={product.id} value={product.id}>{product.title}</option>
-                ))}
-            </select>
-            <button onClick={searchProduct}>Search</button>
+            <header>
+                {/* Add header content here if needed */}
+            </header>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                {/* Styled search bar */}
+                <select
+                    value={selectedProduct}
+                    onChange={e => setSelectedProduct(e.target.value)}
+                    style={{
+                        padding: '10px',
+                        borderRadius: '5px',
+                        border: '1px solid #ccc',
+                        marginRight: '10px',
+                        fontSize: '14px',
+                        width: '200px', // Adjust width as needed
+                    }}
+                >
+                    <option value="">Select a product...</option>
+                    {products.map(product => (
+                        <option key={product.id} value={product.id}>{product.title}</option>
+                    ))}
+                </select>
+                {/* Styled search button */}
+                <button
+                    onClick={searchProduct}
+                    style={{
+                        backgroundColor: '#D2B48C', // Light brown background color
+                        color: 'white', // White text color for contrast
+                        padding: '10px 20px', // Padding inside the button
+                        borderRadius: '5px', // Rounded corners
+                        fontWeight: 'bold', // Bold text
+                        fontSize: '14px', // Font size
+                        cursor: 'pointer', // Change cursor to pointer on hover
+                        border: 'none', // Remove border
+                    }}
+                >
+                    Search
+                </button>
+            </div>
             {searchedProduct && (
                 <div>
                     <h2>{searchedProduct.title}</h2>
                     <img
-                        component="img"
-                        height="300"
-                        width="300"
                         src={searchedProduct.image}
                         alt={searchedProduct.title}
-                        style={{ objectFit: 'contain' }}
+                        style={{ height: '300px', width: '300px', objectFit: 'contain' }}
                     />
                 </div>
             )}
