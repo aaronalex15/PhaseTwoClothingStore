@@ -27,18 +27,6 @@
 
 }
 
-.main-title {
-    position: absolute;
-    top: 0px;
-    left: -150px;
-    font-family: 'Dancing Script', cursive; 
-    -webkit-text-stroke: .1px rgb(240, 9, 9); 
-    margin-left: 2in; 
-    font-size: 3rem; 
-    color: rgb(9, 5, 8);
-    font-weight: 3000; /* Make text bolder */
-}
-
 /* Elevate Your Shopping Experience text styling */
 .elevate-text {
     position: absolute;
@@ -51,11 +39,6 @@
     color: rgb(226, 21, 148);
     
 }
-/* Set the background color of the entire page (body) to black */
-body {
-    background-color: rgb(195, 135, 135);
-}
-
 
 
 .centered-button {
