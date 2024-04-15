@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import ProductList from './ProductList'; 
+import { Card, CardMedia, CardContent, Typography } from '@mui/material';
+import AddToCart from './AddToCart';
 
 function Search() {
     const [products, setProducts] = useState([]);
@@ -32,6 +33,7 @@ function Search() {
         <>
             
             <div style={{ display: 'flex', alignItems: 'center' }}>
+             
                 <select
                     value={selectedProduct}
                     onChange={e => setSelectedProduct(e.target.value)}
@@ -41,33 +43,59 @@ function Search() {
                         border: '1px solid #ccc',
                         marginRight: '10px',
                         fontSize: '14px',
-                        width: '200px', 
+                        width: '200px',
                     }}
                 >
                     <option value="">Select a product...</option>
                     {products.map(product => (
-                        <option key={product.id} value={product.id}>{product.title}</option>
+                        <option
+                            key={product.id}
+                            value={product.id}
+                            style={{
+                                backgroundColor: selectedProduct === product.id ? 'white' : 'transparent',
+                            }}
+                        >
+                            {product.title}
+                        </option>
                     ))}
                 </select>
-                {}
                 <button
                     onClick={searchProduct}
                     style={{
                         backgroundColor: '#D2B48C',
                         color: 'white',
-                        padding: '10px 20px', 
-                        borderRadius: '5px', 
-                        fontWeight: 'bold', 
-                        fontSize: '14px', 
+                        padding: '10px 20px',
+                        borderRadius: '5px',
+                        fontWeight: 'bold',
+                        fontSize: '14px',
                         cursor: 'pointer',
-                        border: 'none', 
+                        border: 'none',
                     }}
                 >
                     Search
                 </button>
             </div>
-            {}
-            <ProductList selectedProduct={searchedProduct} />
+            {searchedProduct && (
+                <Card style={{ backgroundColor: 'white', marginTop: '20px', padding: '20px' }}>
+                    <CardMedia
+                        component="img"
+                        height="200"
+                        image={searchedProduct.image}
+                        alt={searchedProduct.title}
+                        style={{ objectFit: 'contain' }}
+                    />
+                    <CardContent>
+                        <Typography variant="h6">{searchedProduct.title}</Typography>
+                        <Typography variant="body2" color="textSecondary">
+                            {searchedProduct.category}
+                        </Typography>
+                        <Typography variant="h6" color="textPrimary" style={{ marginTop: '10px' }}>
+                            ${searchedProduct.price}
+                        </Typography>
+                        <AddToCart id={searchedProduct.id} />
+                    </CardContent>
+                </Card>
+            )}
         </>
     );
 }
