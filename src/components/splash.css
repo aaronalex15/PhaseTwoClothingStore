@@ -27,17 +27,45 @@
 
 }
 
+/* Center the title and apply curved underline */
 .main-title {
-    position: absolute;
-    top: 30px;
-    left: 250px;
-    font-family: 'Dancing Script', cursive; 
-    -webkit-text-stroke: .1px rgb(240, 9, 9); 
-    margin-left: 2in; 
-    font-size: 3rem; 
-    color: rgb(9, 5, 8);
-    font-weight: 3000; /* Make text bolder */
+    text-align: center; /* Center the title */
+    font-size: 3rem; /* Adjust the size as needed */
+    margin-bottom: 10px; /* Add margin at the bottom */
+
+    /* Add a cursive underline */
+    position: relative; /* Needed for absolute positioning of the underline */
+    padding-bottom: 10px; /* Add padding for the underline */
+
+    font-family: 'Dancing Script', cursive; /* Use a cursive font for the title */
 }
+
+/* Create the curved cursive underline */
+.main-title::after {
+    content: '';
+    position: absolute;
+    left: 50%; /* Center the underline */
+    transform: translateX(-50%);
+    bottom: 0; /* Place the underline at the bottom of the title */
+    width: 80%; /* Adjust width as needed */
+    height: 2px; /* Adjust height for thickness */
+    background-color: black; /* Change the color of the underline */
+    border-radius: 10px; /* Adjust radius for a curved effect */
+}
+
+/* Create the curved cursive underline */
+.main-title::after {
+    content: '';
+    position: absolute;
+    left: 50%; /* Center the underline */
+    transform: translateX(-50%);
+    bottom: 0; /* Place the underline at the bottom of the title */
+    width: 80%; /* Adjust width as needed */
+    height: 2px; /* Adjust height for thickness */
+    background-color: #yourColor; /* Change the color of the underline */
+    border-radius: 10px; /* Adjust radius for a curved effect */
+}
+
 
 /* Elevate Your Shopping Experience text styling */
 .elevate-text {
@@ -77,3 +105,15 @@ body {
 .centered-button:hover {
     opacity: 0.9;
 }
+
+
+
+
+
+
+
+
+
+
+
+
