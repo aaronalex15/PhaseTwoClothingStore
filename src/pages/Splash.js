@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../components/splashCover.png";
 import { Link } from "react-router-dom";
-import '../components/splash.css'; 
+import '../components/Style.css'; 
 
 function Splash() {
     return (
@@ -14,6 +14,7 @@ function Splash() {
             <Link to="/shop">
                 <button className="centered-button">SHOP</button>
             </Link>
+           
         </div>
     );
 }
