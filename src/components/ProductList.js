@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Card, CardContent, CardMedia, Typography, Grid } from '@mui/material';
-import AddToCart from './AddToCart'; 
+import AddToCart from './AddToCart';
 
 function ProductList() {
     const [productList, setProductList] = useState([]);
 
     useEffect(() => {
         fetch("https://fakestoreapi.com/products")
-            .then((r) => r.json())
+            .then((response) => response.json())
             .then((data) => {
                 setProductList(data);
             });
@@ -20,8 +20,8 @@ function ProductList() {
             </Typography>
             <Grid container spacing={3}>
                 {productList.map((product) => (
-                    <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
-                        <Card>
+                    <Grid item xs={12} sm={4} md={4} lg={4} xl={4} key={product.id}>
+                        <Card style={{ backgroundColor: '#FFDAB9' }}>
                             <CardMedia
                                 component="img"
                                 height="200"
@@ -31,7 +31,6 @@ function ProductList() {
                             />
                             <CardContent>
                                 <Typography variant="h6">{product.title}</Typography>
-                                
                                 <Typography variant="body2" color="textSecondary">
                                     {product.category}
                                 </Typography>
