@@ -43,7 +43,7 @@ function Search() {
                         border: '1px solid #ccc',
                         marginRight: '10px',
                         fontSize: '14px',
-                        width: '200px', // Adjust width as needed
+                        width: '200px', 
                     }}
                 >
                     <option value="">Select a product...</option>
@@ -51,18 +51,18 @@ function Search() {
                         <option key={product.id} value={product.id}>{product.title}</option>
                     ))}
                 </select>
-                {/* Styled search button */}
+                {}
                 <button
                     onClick={searchProduct}
                     style={{
-                        backgroundColor: '#D2B48C', // Light brown background color
-                        color: 'white', // White text color for contrast
-                        padding: '10px 20px', // Padding inside the button
-                        borderRadius: '5px', // Rounded corners
-                        fontWeight: 'bold', // Bold text
-                        fontSize: '14px', // Font size
-                        cursor: 'pointer', // Change cursor to pointer on hover
-                        border: 'none', // Remove border
+                        backgroundColor: '#D2B48C',
+                        color: 'white',
+                        padding: '10px 20px', 
+                        borderRadius: '5px', 
+                        fontWeight: 'bold', 
+                        fontSize: '14px', 
+                        cursor: 'pointer',
+                        border: 'none', 
                     }}
                 >
                     Search

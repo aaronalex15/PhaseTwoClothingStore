@@ -1,22 +1,22 @@
-import { Link } from "react-router-dom";
-import ProductList from "../components/ProductList";
-import ProductForm from "../components/ProductForm";
+import { Link } from 'react-router-dom';
 import { Container } from "@mui/material";
+import ProductList from "../components/ProductList";
 import Search from "../components/Search";
 
 
 function MainMenu() {
     return (
         <div className="Home">
-           <h1 className="main-title">LuxeMarket</h1>
+        <h1 className="main-title">LuxeMarket</h1>
             <Container>
-                
+            
                 <br />
                 <Search />
                 <br />
                 {/* <ProductForm /> */}
                 <br />
                 <ProductList />
+            
             </Container>
         </div>
     );
