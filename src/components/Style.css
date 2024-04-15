@@ -36,11 +36,10 @@
     /* Add a cursive underline */
     position: relative; /* Needed for absolute positioning of the underline */
     padding-bottom: 10px; /* Add padding for the underline */
-
     font-family: 'Dancing Script', cursive; /* Use a cursive font for the title */
 }
 
-/* Create the curved cursive underline */
+
 .main-title::after {
     content: '';
     position: absolute;
@@ -82,6 +81,19 @@
 /* Set the background color of the entire page (body) to black */
 body {
     background-color: rgb(195, 135, 135);
+}
+
+.transparent-button {
+    background-color: transparent; 
+    color: black;
+    border: none; 
+    font-size: 3rem; 
+    font-family: 'Dancing Script', cursive; 
+    position: fixed; /* Position the button */
+    top: 5%; /* Move the button closer to the top */
+    left: 50%; /* Move the button to the horizontal center */
+    transform: translateX(-50%); /* Center the button horizontally */
+    z-index: 1; /* Ensure the button is above other elements */
 }
 
 
