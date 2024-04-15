@@ -29,8 +29,8 @@
 
 .main-title {
     position: absolute;
-    top: 0px;
-    left: -150px;
+    top: 30px;
+    left: 250px;
     font-family: 'Dancing Script', cursive; 
     -webkit-text-stroke: .1px rgb(240, 9, 9); 
     margin-left: 2in; 

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 function Search() {
     const [products, setProducts] = useState([]);
     const [selectedProduct, setSelectedProduct] = useState('');
+    const [searchedProduct, setSearchedProduct] = useState(null);
 
     // Fetch products from the API
     useEffect(() => {
@@ -15,54 +16,39 @@ function Search() {
     // Function to handle search button click
     const searchProduct = () => {
         if (selectedProduct) {
-            alert(`Searching for product with ID: ${selectedProduct}`);
+            const product = products.find(product => product.id === parseInt(selectedProduct));
+            if (product) {
+                setSearchedProduct(product);
+            } else {
+                alert('Product not found.');
+            }
         } else {
             alert('Please select a product from the dropdown.');
         }
     };
-
     return (
         <>
-            <header>
-                {/* Add any header content if necessary */}
-            </header>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-                {/* Styled search bar */}
-                <select
-                    value={selectedProduct}
-                    onChange={e => setSelectedProduct(e.target.value)}
-                    style={{
-                        padding: '10px',
-                        borderRadius: '5px',
-                        border: '1px solid #ccc',
-                        marginRight: '10px',
-                        fontSize: '14px',
-                        width: '200px', // Set width as needed
-                    }}
-                >
-                    <option value="">Select a product...</option>
-                    {products.map(product => (
-                        <option key={product.id} value={product.id}>{product.title}</option>
-                    ))}
-                </select>
-                
-                {/* Styled search button */}
-                <button
-                    onClick={searchProduct}
-                    style={{
-                        backgroundColor: '#D2B48C', // Light brown background color
-                        color: 'white', // White text color for contrast
-                        padding: '10px 20px', // Padding inside the button
-                        borderRadius: '5px', // Rounded corners
-                        fontWeight: 'bold', // Bold text
-                        fontSize: '14px', // Font size
-                        cursor: 'pointer', // Change cursor to pointer on hover
-                        border: 'none' // Remove border
-                    }}
-                >
-                    Search
-                </button>
-            </div>
+            <header></header>
+            <select value={selectedProduct} onChange={e => setSelectedProduct(e.target.value)}>
+                <option value="">Select a product...</option>
+                {products.map(product => (
+                    <option key={product.id} value={product.id}>{product.title}</option>
+                ))}
+            </select>
+            <button onClick={searchProduct}>Search</button>
+            {searchedProduct && (
+                <div>
+                    <h2>{searchedProduct.title}</h2>
+                    <img
+                        component="img"
+                        height="300"
+                        width="300"
+                        src={searchedProduct.image}
+                        alt={searchedProduct.title}
+                        style={{ objectFit: 'contain' }}
+                    />
+                </div>
+            )}
         </>
     );
 }
