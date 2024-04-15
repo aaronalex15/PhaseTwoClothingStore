@@ -31,12 +31,7 @@ function ProductList() {
                             />
                             <CardContent>
                                 <Typography variant="h6">{product.title}</Typography>
-                                <Typography variant="body2" color="textSecondary">
-                                    ${product.price}
-                                </Typography>
-                                <Typography variant="body2" color="textSecondary">
-                                    {product.description}
-                                </Typography>
+                                
                                 <Typography variant="body2" color="textSecondary">
                                     {product.category}
                                 </Typography>
