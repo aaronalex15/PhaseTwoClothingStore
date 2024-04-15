@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import Splash from "./components/Splash";
 import ProductPage from "./pages/ProductPage";
 import MainMenu from "./pages/MainMenu";
-
+import ProductPage from "./pages/ProductPage";
 
 
 
@@ -15,6 +15,10 @@ const routes = [
   {
     path: "/shop",
     element: <MainMenu />
+  },
+  {
+    path: "/product/:id",
+    element: <ProductPage />
   }
 ];
 
