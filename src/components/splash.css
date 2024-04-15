@@ -16,11 +16,28 @@
 
 .splash-title {
     position: absolute;
-    top: 10px;
+    top: 50px;
+    left: 170px;
+    font-family: 'Dancing Script', cursive; 
+    -webkit-text-stroke: .1px white; 
+    margin-left: 2in; 
+    font-size: 3rem; 
+    color: rgb(226, 21, 148);
+    
+
+}
+
+/* Elevate Your Shopping Experience text styling */
+.elevate-text {
+    position: absolute;
+    top: 100px;
     left: 10px;
     font-family: 'Dancing Script', cursive; 
+    -webkit-text-stroke: .1px white; 
+    margin-left: 2in; 
     font-size: 3rem; 
-    color: black;
+    color: rgb(226, 21, 148);
+    
 }
 
 
