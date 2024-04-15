@@ -44,7 +44,7 @@ function ProductList({ selectedProduct }) {
                 ) : (
                     productList.map((product) => (
                         <Grid item xs={12} sm={4} md={4} lg={4} xl={4} key={product.id}>
-                            <Card style={{ backgroundColor: '#FFDAB9' }}>
+                            <Card style={{ backgroundColor: 'white' }}>
                                 <CardMedia
                                     component="img"
                                     height="200"
