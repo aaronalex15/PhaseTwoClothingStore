@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { Container } from "@mui/material";
 import ProductList from "../components/ProductList";
 import Search from "../components/Search";
@@ -12,10 +11,10 @@ function MainMenu() {
             <br />
                 <Search />
                 <br />
-              
+                
                 <br />
                 <ProductList />
-
+            
             </Container>
         </div>
     );

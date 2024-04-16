@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardMedia, CardContent, Typography } from '@mui/material';
 import AddToCart from './AddToCart';
-import { red } from '@mui/material/colors';
+
+
 
 function Search() {
     const [products, setProducts] = useState([]); //uses state to managage .. holds array fetched from api
     const [selectedProduct, setSelectedProduct] = useState(''); //uses state to track of selected products on dropdown
     const [searchedProduct, setSearchedProduct] = useState(null); //uses state to managage  to store product
-
+    
     // Fetch products from the API
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
@@ -15,7 +16,7 @@ function Search() {
             .then(data => setProducts(data))
             .catch(error => console.error('Error fetching products:', error));
     }, []); // This hook ensures that the API call is made only once when the component mounts, due to the empty dependency array
-
+    
     // Function to handle search button click
     const searchProduct = () => {
         if (selectedProduct) { // ofproduct is selected 
@@ -29,12 +30,12 @@ function Search() {
             alert('Please select a product from the dropdown.');
         }
     };
-
+    
     return (
         <>
             
             <div style={{ display: 'flex', alignItems: 'center' }}>
-             
+            
                 <select
                     value={selectedProduct}
                     onChange={e => setSelectedProduct(e.target.value)}
