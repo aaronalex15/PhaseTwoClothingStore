@@ -7,7 +7,7 @@ import Search from "../components/Search";
 function MainMenu() {
     return (
         <div className="Home">
-        <h1 className="main-title">SHOP-EASE</h1>
+        <h1 className="main-title">SmoothShop</h1>
             <Container>
             <br />
                 <Search />
