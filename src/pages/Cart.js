@@ -7,7 +7,7 @@ import '../components/Style.css';
 function Cart() {
     return (
         <div className="cart-container">
-            <h1 className="main-title">SHOP-EASE</h1>
+            <h1 className="main-title">SmoothShop</h1>
             
             <Link to="/shop">
                 <Button className="shop-button">SHOP</Button>
@@ -15,7 +15,7 @@ function Cart() {
             
             <Link to="/">
                 {}
-                <Button className="shop-ease-button">SHOP-EASE</Button>
+                <Button className="shop-ease-button">SmoothShop</Button>
             </Link>
             
             <Container>
