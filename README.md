@@ -1,27 +1,31 @@
-# Online Clothing Store
+# SmoothShop
 
-This is a single-page application (SPA) that serves as an e-commerce clothing store. Users can view filtered items on page launch, search for specific items, and use a form with multiple filters (size, gender, brand) to further narrow down the items displayed. User can add items to the cart and remove them.
-
-The application uses React for the frontend and the [Fake Store API](https://fakestoreapi.com/) for fetching data.
 
 ## Table of Contents
-
+- [Introduction](#Introduction)
 - [Features](#features)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
+- [Installation](#Installation)
 - [API](#api)
-- [Project Owners](#project-owners)
+- [Acknowledgments](#Acknowledgments)
 - [License](#license)
+
+## Introduction
+
+Welcome to Smooth Shop, where simplicity meets sophistication in the world of online shopping.
+Whether you're a seasoned shopper or just starting your online journey, Smooth Shop is your go-to destination for effortlessly finding what you need, when you need it. Get ready to experience shopping in its smoothest form. Welcome aboard!
 
 ## Features
 
-- View filtered items on page launch
-- Each item is displayed on its own card
-- Search functionality for finding specific items
-- Form with multiple filters (size, gender, brand) to refine the item display
-- Responsive design for an optimal user experience across devices
 
-## Getting Started
+- Splash Page
+- Search functionality for finding specific items
+- View filtered items on page launch
+- Each product is displayed on its own card
+- Product information displayed on card
+- Ability to add selected items to cart
+- ability to remove items from cart
+
+## Installation
 
 To get started with the application, follow these steps:
 
@@ -51,21 +55,20 @@ To get started with the application, follow these steps:
 
 The application will be running at `http://localhost:3000/`.
 
-## Usage
-
-- **Home*: On page launch, the application displays a list of items filtered from the API. Each item is shown on its own card with relevant details such as image, title, and price.
-- **Search**: Use the search bar to find specific items based on the title.
-- **Filters**: The form allows you to filter items based on size, gender, and brand.
 
 ## API
 
-The application uses the [Fake Store API](https://fakestoreapi.com/) to fetch data. You can view the API documentation for further details.
+The application uses the [Fake Store API](https://fakestoreapi.com/) to fetch data. 
 
-## Project Owners
+API endpoint information can be found on 
+(https://fakestoreapi.com/)
+
+## Acknowledgments
+Special thanks to our contributors for their valuable input and contributions.
 
 - Aaron Johnson
 - Pedro Alarcon
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.

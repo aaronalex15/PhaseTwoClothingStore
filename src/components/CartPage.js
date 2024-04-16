@@ -4,18 +4,19 @@ import { Container, Typography, Button, CircularProgress } from '@mui/material';
 import { Link } from "react-router-dom";
 import '../components/Style.css'; 
 
+
 function CartPage() {
     const { id } = useParams(); // to extract the id parameter from url path
     const [cartItems, setCartItems] = useState([]);
     const [loading, setLoading] = useState(false);
-
+    
     useEffect(() => {
         const savedCartItems = JSON.parse(localStorage.getItem('cartItems'));
         if (savedCartItems) {
             setCartItems(savedCartItems); // gets items from local storage , if existing and sets them to state
         }
     }, []);
-
+    
     useEffect(() => {
         if (id) {
             setLoading(true); //if id parameter changes 
@@ -31,23 +32,23 @@ function CartPage() {
                 });
         }
     }, [id]);
-
+    
     const fetchItemDetails = async (itemId) => {
         const response = await fetch(`https://fakestoreapi.com/products/${itemId}`);
         const data = await response.json();
         return data;
     };
-
+    
     const removeFromCart = (index) => {
         const newCartItems = [...cartItems];
         newCartItems.splice(index, 1); //removes an item from cart based on index
         setCartItems(newCartItems);
         localStorage.setItem('cartItems', JSON.stringify(newCartItems));
     };
-
+    
     return (
         <Container>
-
+        
             <h1>Items In Cart</h1>
             {loading ? (
                 <CircularProgress />

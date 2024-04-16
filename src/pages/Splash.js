@@ -14,7 +14,7 @@ function Splash() {
             <Link to="/shop">
                 <button className="centered-button">SHOP</button>
             </Link>
-           
+            
         </div>
     );
 }
