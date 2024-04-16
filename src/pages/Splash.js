@@ -8,7 +8,7 @@ function Splash() {
         <div className="splash-container">
             <header>
                 <img src={logo} className="splash-logo" alt="logo" />
-                <h1 className="splash-title">LuxeMarket</h1>
+                <h1 className="splash-title">SHOP EASE</h1>
                 <h2 className="elevate-text">Elevate Your Shopping Experience</h2>
             </header>
             <Link to="/shop">

@@ -4,13 +4,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full height of the viewport */
+    height: 100vh; 
 }
 
 /* Style for the image */
 .splash-logo {
-    max-width: 100%; /* Prevent the image from exceeding its natural width */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; 
+    height: auto; 
     display: block;
 }
 
@@ -24,7 +24,6 @@
     font-size: 3rem; 
     color: rgb(226, 21, 148);
     
-
 }
 
 /* Center the title and apply curved underline */
@@ -69,8 +68,8 @@
 /* Elevate Your Shopping Experience text styling */
 .elevate-text {
     position: absolute;
-    top: 100px;
-    left: 10px;
+    top: 140px;
+    left: 0px;
     font-family: 'Dancing Script', cursive; 
     -webkit-text-stroke: .1px white; 
     margin-left: 2in; 
@@ -83,20 +82,6 @@ body {
     background-color: rgb(195, 135, 135);
 }
 
-.transparent-button {
-    background-color: transparent; 
-    color: black;
-    border: none; 
-    font-size: 3rem; 
-    font-family: 'Dancing Script', cursive; 
-    position: fixed; /* Position the button */
-    top: 5%; /* Move the button closer to the top */
-    left: 50%; /* Move the button to the horizontal center */
-    transform: translateX(-50%); /* Center the button horizontally */
-    z-index: 1; /* Ensure the button is above other elements */
-}
-
-
 
 .centered-button {
     position: absolute;
@@ -106,7 +91,7 @@ body {
     z-index: 1;
     padding: 15px 30px;
     font-size: 1.5rem;
-    background-color: black;
+    background-color: rgb(131, 9, 9);
     color: white;
     border: none;
     border-radius: 5px;
@@ -122,10 +107,20 @@ body {
 
 
 
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    height: 150vh; 
+}
 
 
-
-
-
-
-
+.luxemarket-button {
+   
+    padding: 10px 20px;
+    background-color: #ff9800;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
