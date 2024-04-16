@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, CardContent, CardMedia, Typography, Grid } from '@mui/material';
 import AddToCart from './AddToCart';
+import ProductCard from './ProductCard';
 
 function ProductList({ selectedProduct }) {
     const [productList, setProductList] = useState([]);
@@ -12,6 +13,10 @@ function ProductList({ selectedProduct }) {
                 setProductList(data);
             });
     }, []);
+
+    const productCards = productList.map((product) => {
+        return <ProductCard key={product.title} product={product} />;
+    })
 
     return (
         <div style={{ padding: '20px' }}>

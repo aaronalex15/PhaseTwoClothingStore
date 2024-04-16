@@ -1,7 +1,7 @@
 import React from "react";
-import logo from "../components/splashCover.png";
+import logo from "./splashCover.png";
 import { Link } from "react-router-dom";
-import '../components/splash.css'; 
+import './splash.css'; /* Import your CSS file */
 
 function Splash() {
     return (
@@ -9,7 +9,7 @@ function Splash() {
             <header>
                 <img src={logo} className="splash-logo" alt="logo" />
                 <h1 className="splash-title">SmoothShop</h1>
-                <h2 className="elevate-text">A Shopping Experience...with no bumps</h2>
+                <h2 className="elevate-text">Shopping with Ease</h2>
             </header>
             <Link to="/shop">
                 <button className="centered-button">SHOP</button>

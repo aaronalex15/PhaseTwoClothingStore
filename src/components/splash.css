@@ -9,20 +9,27 @@
 
 /* Style for the image */
 .splash-logo {
-    max-width: 100%; /* Prevent the image from exceeding its natural width */
+    position: fixed;
+    top: 50%; /* Position the image at the vertical center of the page */
+    left: 50%; /* Position the image at the horizontal center of the page */
+    transform: translate(-50%, -50%); /* Adjust for the image's dimensions */
+    max-width: 90%; /* Prevent the image from exceeding its natural width */
     height: auto; /* Maintain aspect ratio */
     display: block;
+    margin: 0 auto; /* Centering margin - this property isn't necessary for fixed positioning */
 }
 
+
 .splash-title {
-    position: absolute;
-    top: 50px;
-    left: 170px;
+    position: fixed;
+    top: 30%; 
+    left: 39%; 
+    transform: translate(-50%, -50%); 
     font-family: 'Dancing Script', cursive; 
-    -webkit-text-stroke: .1px white; 
+    -webkit-text-stroke: .1px rgb(33, 168, 201); 
     margin-left: 2in; 
     font-size: 3rem; 
-    color: rgb(226, 21, 148);
+    color: black;
     
 
 }
@@ -69,27 +76,27 @@
 
 /* Elevate Your Shopping Experience text styling */
 .elevate-text {
-    position: absolute;
-    top: 100px;
-    left: 10px;
+    position: fixed;
+    top: 375px;
+    left: 360px;
     font-family: 'Dancing Script', cursive; 
-    -webkit-text-stroke: .1px white; 
+    -webkit-text-stroke: .1px rgb(33, 168, 201); 
     margin-left: 2in; 
     font-size: 3rem; 
-    color: rgb(226, 21, 148);
+    color: black;
     
 }
 /* Set the background color of the entire page (body) to black */
 body {
-    background-color: rgb(195, 135, 135);
+    background-color: rgb(246, 234, 212);
 }
 
 
 
 .centered-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    position: fixed;
+    top: 93%;
+    left: 49.5%;
     transform: translate(-50%, -50%);
     z-index: 1;
     padding: 15px 30px;
