@@ -47,11 +47,7 @@ function CartPage() {
 
     return (
         <Container>
-                <h1 className="main-title">LuxeMarket</h1>
-            <Link to="/shop">
-                <Button variant="contained" color="primary">Main Menu</Button>
-            </Link>
-           
+               
             <h1>Items In Cart</h1>
             {loading ? (
                 <CircularProgress />

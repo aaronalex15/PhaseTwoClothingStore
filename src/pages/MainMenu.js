@@ -7,16 +7,15 @@ import Search from "../components/Search";
 function MainMenu() {
     return (
         <div className="Home">
-        <h1 className="main-title">LuxeMarket</h1>
+        <h1 className="main-title">SHOP-EASE</h1>
             <Container>
-            
-                <br />
+            <br />
                 <Search />
                 <br />
                 {/* <ProductForm /> */}
                 <br />
                 <ProductList />
-            
+
             </Container>
         </div>
     );

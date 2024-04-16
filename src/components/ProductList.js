@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Card, CardContent, CardMedia, Typography, Grid } from '@mui/material';
+import { Card, CardContent, CardMedia, Typography, Button,  Grid } from '@mui/material';
+import { Link } from "react-router-dom";
 import AddToCart from './AddToCart';
 
 function ProductList({ selectedProduct }) {
@@ -15,6 +16,7 @@ function ProductList({ selectedProduct }) {
 
     return (
         <div style={{ padding: '20px' }}>
+            
             <Typography variant="h4" style={{ marginBottom: '20px' }}>
                 Latest Arrivals
             </Typography>
