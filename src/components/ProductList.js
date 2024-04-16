@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import AddToCart from './AddToCart';
 import ProductCard from './ProductCard';
 
-function ProductList({ selectedProduct }) {
-    const [productList, setProductList] = useState([]);
+function ProductList({ selectedProduct }) { //takes selectedProduct as a prop
+    const [productList, setProductList] = useState([]); // manage the state of productList
 
     useEffect(() => {
-        fetch("https://fakestoreapi.com/products")
-            .then((response) => response.json())
+        fetch("https://fakestoreapi.com/products") // http request made to url 
+            .then((response) => response.json()) //once response recieved it is converted to json format
             .then((data) => {
-                setProductList(data);
+                setProductList(data); //resulting data stored in product list using state setproductlist
             });
     }, []);
 
