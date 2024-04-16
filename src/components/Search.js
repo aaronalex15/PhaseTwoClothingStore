@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardMedia, CardContent, Typography } from '@mui/material';
 import AddToCart from './AddToCart';
+import { red } from '@mui/material/colors';
 
 function Search() {
-    const [products, setProducts] = useState([]);
-    const [selectedProduct, setSelectedProduct] = useState('');
-    const [searchedProduct, setSearchedProduct] = useState(null);
+    const [products, setProducts] = useState([]); //uses state to managage .. holds array fetched from api
+    const [selectedProduct, setSelectedProduct] = useState(''); //uses state to track of selected products on dropdown
+    const [searchedProduct, setSearchedProduct] = useState(null); //uses state to managage  to store product
 
     // Fetch products from the API
     useEffect(() => {
@@ -13,13 +14,13 @@ function Search() {
             .then(response => response.json())
             .then(data => setProducts(data))
             .catch(error => console.error('Error fetching products:', error));
-    }, []);
+    }, []); // This hook ensures that the API call is made only once when the component mounts, due to the empty dependency array
 
     // Function to handle search button click
     const searchProduct = () => {
-        if (selectedProduct) {
-            const product = products.find(product => product.id === parseInt(selectedProduct));
-            if (product) {
+        if (selectedProduct) { // ofproduct is selected 
+            const product = products.find(product => product.id === parseInt(selectedProduct)); //then looks for that product in products using the endpoint products
+            if (product) { //if product is found it will update searched product
                 setSearchedProduct(product);
             } else {
                 alert('Product not found.');

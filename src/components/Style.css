@@ -104,9 +104,6 @@ body {
 }
 
 
-
-
-
 .cart-container {
     display: flex;
     flex-direction: column;
@@ -115,8 +112,7 @@ body {
     height: 150vh; 
 }
 
-
-.luxemarket-button {
+.shop-ease-button {
    
     padding: 10px 20px;
     background-color: #ff9800;
