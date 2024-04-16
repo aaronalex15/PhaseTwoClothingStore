@@ -4,34 +4,26 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full height of the viewport */
+    height: 100vh; 
 }
 
 /* Style for the image */
 .splash-logo {
-    position: fixed;
-    top: 50%; /* Position the image at the vertical center of the page */
-    left: 50%; /* Position the image at the horizontal center of the page */
-    transform: translate(-50%, -50%); /* Adjust for the image's dimensions */
-    max-width: 90%; /* Prevent the image from exceeding its natural width */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; 
+    height: auto; 
     display: block;
-    margin: 0 auto; /* Centering margin - this property isn't necessary for fixed positioning */
 }
 
-
 .splash-title {
-    position: fixed;
-    top: 30%; 
-    left: 39%; 
-    transform: translate(-50%, -50%); 
+    position: absolute;
+    top: 50px;
+    left: 170px;
     font-family: 'Dancing Script', cursive; 
-    -webkit-text-stroke: .1px rgb(33, 168, 201); 
+    -webkit-text-stroke: .1px white; 
     margin-left: 2in; 
     font-size: 3rem; 
-    color: black;
+    color: rgb(226, 21, 148);
     
-
 }
 
 /* Center the title and apply curved underline */
@@ -43,11 +35,10 @@
     /* Add a cursive underline */
     position: relative; /* Needed for absolute positioning of the underline */
     padding-bottom: 10px; /* Add padding for the underline */
-
     font-family: 'Dancing Script', cursive; /* Use a cursive font for the title */
 }
 
-/* Create the curved cursive underline */
+
 .main-title::after {
     content: '';
     position: absolute;
@@ -76,32 +67,31 @@
 
 /* Elevate Your Shopping Experience text styling */
 .elevate-text {
-    position: fixed;
-    top: 375px;
-    left: 360px;
+    position: absolute;
+    top: 140px;
+    left: 0px;
     font-family: 'Dancing Script', cursive; 
-    -webkit-text-stroke: .1px rgb(33, 168, 201); 
+    -webkit-text-stroke: .1px white; 
     margin-left: 2in; 
     font-size: 3rem; 
-    color: black;
+    color: rgb(226, 21, 148);
     
 }
 /* Set the background color of the entire page (body) to black */
 body {
-    background-color: rgb(246, 234, 212);
+    background-color: rgb(195, 135, 135);
 }
 
 
-
 .centered-button {
-    position: fixed;
-    top: 93%;
-    left: 49.5%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
     padding: 15px 30px;
     font-size: 1.5rem;
-    background-color: black;
+    background-color: rgb(131, 9, 9);
     color: white;
     border: none;
     border-radius: 5px;
@@ -117,10 +107,20 @@ body {
 
 
 
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    height: 150vh; 
+}
 
 
-
-
-
-
-
+.luxemarket-button {
+   
+    padding: 10px 20px;
+    background-color: #ff9800;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}

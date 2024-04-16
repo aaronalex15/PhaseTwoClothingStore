@@ -9,14 +9,13 @@ function MainMenu() {
         <div className="Home">
         <h1 className="main-title">SmoothShop</h1>
             <Container>
-            
-                <br />
+            <br />
                 <Search />
                 <br />
                 {/* <ProductForm /> */}
                 <br />
                 <ProductList />
-            
+
             </Container>
         </div>
     );
