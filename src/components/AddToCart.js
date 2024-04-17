@@ -21,7 +21,7 @@ const AddToCart = ({ id }) => {
                         fontWeight: 'bold',
                         fontSize: '14px',
                     }}
-                >
+                    >
                     Add to Cart
                 </Button>
             </div>
