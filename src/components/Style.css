@@ -121,10 +121,7 @@ body {
 }
 
 .shop-ease-button {
+   color: aliceblue;
    
-    padding: 10px 20px;
-    background-color: #ff9800;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
 }
+

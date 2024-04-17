@@ -14,8 +14,7 @@ function Cart() {
             </Link>
             
             <Link to="/">
-                {}
-                <Button className="shop-ease-button">SmoothShop</Button>
+                <Button className="smooth-shop">SmoothShop</Button>
             </Link>
             
             <Container>
