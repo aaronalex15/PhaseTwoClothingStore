@@ -66,11 +66,12 @@ function ProductList({ selectedProduct }) { //takes selectedProduct as a prop
                                     <AddToCart id={product.id} />
                                 </CardContent>
                             </Card>
-                            <NewProduct/>
+                          
                         </Grid>
                     ))
                 )}
             </Grid>
+            <NewProduct/>
         </div>
     );
 }
