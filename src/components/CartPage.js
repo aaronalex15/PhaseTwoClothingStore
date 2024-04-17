@@ -6,40 +6,45 @@ function CartPage() {
     const { id } = useParams();
     const [cartItems, setCartItems] = useState([]);
     const [loading, setLoading] = useState(false);
-
-    // Fetch saved cart items from local storage when component mounts
+    
+    // Load cart items from local storage
     useEffect(() => {
         const savedCartItems = JSON.parse(localStorage.getItem('cartItems'));
         if (savedCartItems) {
             setCartItems(savedCartItems);
         }
     }, []);
-
-    // Fetch item details when id changes
+    
+    // Check if itemId (id) is valid and avoid automatically adding items
     useEffect(() => {
         if (id) {
             setLoading(true);
             fetchItemDetails(id)
                 .then((item) => {
-                    setCartItems(prevItems => [...prevItems, item]);
+                    // Check if item already exists in the cart
+                    if (!cartItems.some(cartItem => cartItem.id === item.id)) {
+                        const newCartItems = [...cartItems, item];
+                        setCartItems(newCartItems);
+                        localStorage.setItem('cartItems', JSON.stringify(newCartItems));
+                    }
                     setLoading(false);
-                    localStorage.setItem('cartItems', JSON.stringify([...cartItems, item]));
                 })
                 .catch((error) => {
                     console.error('Error fetching item details:', error);
                     setLoading(false);
                 });
         }
-    }, [id]);
-
-    // Function to fetch item details based on item ID
+    }, [id, cartItems]);
+    
     const fetchItemDetails = async (itemId) => {
         const response = await fetch(`https://fakestoreapi.com/products/${itemId}`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch item details');
+        }
         const data = await response.json();
         return data;
     };
 
-    // Function to remove an item from the cart
     const removeFromCart = (index) => {
         const newCartItems = [...cartItems];
         newCartItems.splice(index, 1);
@@ -47,7 +52,6 @@ function CartPage() {
         localStorage.setItem('cartItems', JSON.stringify(newCartItems));
     };
 
-    // Component to display individual cart item
     const CartItem = ({ item, index }) => (
         <Grid item xs={12} sm={6} md={4} key={index}>
             <Card>
@@ -60,31 +64,25 @@ function CartPage() {
                 />
                 <CardContent>
                     <Typography variant="h6">{item.title}</Typography>
-                    <Typography variant="body2" color="textSecondary" sx={{ marginBottom: 1 }}>
+                    <Typography variant="body2" color="textSecondary">
                         Price: ${item.price.toFixed(2)}
                     </Typography>
-                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: 1 }}>
                         <Button
                             variant="contained"
                             color="secondary"
                             onClick={() => removeFromCart(index)}
-                            sx={{
-                                fontWeight: 'bold',
-                                fontSize: '14px',
-                                color: 'white',
-                                background: 'red',
-                            }}
                         >
                             Remove
                         </Button>
-                    </div>
+                    </Box>
                 </CardContent>
             </Card>
         </Grid>
     );
 
-    // Function to calculate the total price of all cart items
     const calculateTotalPrice = () => {
+        // Calculate total price of cart items
         return cartItems.reduce((total, item) => total + item.price, 0).toFixed(2);
     };
 
@@ -104,7 +102,6 @@ function CartPage() {
                     ))}
                 </Grid>
             )}
-            {/* Display the total price in a container below the items */}
             <Box sx={{ marginTop: 4, padding: 2, border: '1px solid lightgray', borderRadius: 4 }}>
                 <Typography variant="h6">Total Price: ${calculateTotalPrice()}</Typography>
             </Box>
@@ -113,4 +110,3 @@ function CartPage() {
 }
 
 export default CartPage;
-
