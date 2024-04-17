@@ -1,130 +1,106 @@
+/* Import a professional font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Apply the font to the body and text elements */
+body, h1, h2, h3, p, button {
+    font-family: 'Roboto', sans-serif;
+}
+
 /* Container to center content */
 .splash-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 100vh; /* Full viewport height */
 }
 
 /* Style for the image */
 .splash-logo {
-    position: fixed;
-    top: 50%; /* Position the image at the vertical center of the page */
-    left: 50%; /* Position the image at the horizontal center of the page */
-    transform: translate(-50%, -50%); /* Adjust for the image's dimensions */
-    max-width: 90%; /* Prevent the image from exceeding its natural width */
+    max-width: 90%; /* Prevent image from exceeding its natural width */
     height: auto; /* Maintain aspect ratio */
     display: block;
-    margin: 0 auto; /* Centering margin - this property isn't necessary for fixed positioning */
+    margin: 0 auto; /* Center the image horizontally */
 }
-
+/* Style for splash title and elevate text */
+/* Style for splash title */
 .splash-title {
-    position: fixed;
-    top: 15%; 
-    left: 35%; 
-    transform: translate(-50%, -50%); 
-    font-family: 'Dancing Script', cursive; 
-    -webkit-text-stroke: .1px rgb(33, 168, 201); 
-    margin-left: 2in; 
-    font-size: 6rem; 
-    color: black;
-    
-
+    position: absolute; /* Use absolute positioning */
+    top: 30%; /* Position the title above the elevate text */
+    left: 50%; /* Center the text horizontally */
+    transform: translateX(-50%); /* Adjust for the width of the element */
+    font-family: 'Caveat', cursive; /* Use an elegant cursive font */
+    font-size: 4rem; /* Increase font size for a bolder appearance */
+    font-weight: 600; /* Increase font weight for prominence */
+    color: black; /* Text fill color for contrast against the background */
+    text-align: center; /* Center the text */
+    -webkit-text-stroke: 1px white; /* Text stroke in white for Chrome and Safari */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for depth */
+    z-index: 2; /* Ensure the title is on top of the image */
 }
 
-/* Center the title and apply underline */
-.main-title {
-    text-align: center; /* Center the title */
-    font-size: 3rem; /* Adjust the size as needed */
-    margin-bottom: 10px; /* Add margin at the bottom */
-
-    /* Add a cursive underline */
-    position: relative; /* Needed for absolute positioning of the underline */
-    padding-bottom: 10px; /* Add padding for the underline */
-    font-family: 'Dancing Script', cursive; /* Use a cursive font for the title */
-}
-
-
-.main-title::after {
-    content: '';
-    position: absolute;
-    left: 50%; /* Center the underline */
-    transform: translateX(-50%);
-    bottom: 0; /* Place the underline at the bottom of the title */
-    width: 80%; /* Adjust width as needed */
-    height: 2px; /* Adjust height for thickness */
-    background-color: black; /* Change the color of the underline */
-    border-radius: 10px; /* Adjust radius for a curved effect */
-}
-
-/* Create the curved cursive underline */
-.main-title::after {
-    content: '';
-    position: absolute;
-    left: 50%; /* Center the underline */
-    transform: translateX(-50%);
-    bottom: 0; /* Place the underline at the bottom of the title */
-    width: 80%; /* Adjust width as needed */
-    height: 2px; /* Adjust height for thickness */
-    background-color: #yourColor; /* Change the color of the underline */
-    border-radius: 10px; /* Adjust radius for a curved effect */
-}
-
-
-/* Elevate Your Shopping Experience text styling */
+/* Style for elevate text */
 .elevate-text {
-    position: fixed;
-    top: 180px;
-    left: 50px;
-    font-family: 'Dancing Script', cursive; 
-    -webkit-text-stroke: .1px rgb(33, 168, 201); 
-    margin-left: 2in; 
-    font-size: 3rem; 
-    color: black;
-    
-}
-/* Set the background color of the entire page (body) to black */
-body {
-    background-color: rgb(195, 135, 135);
+    position: absolute;
+    top: 40%; /* Position the elevate text below the title */
+    left: 50%; /* Center the text horizontally */
+    transform: translateX(-50%); /* Adjust for the width of the element */
+    font-family: 'Caveat', cursive; /* Use an elegant cursive font */
+    font-size: 2rem; /* Adjust the font size as desired */
+    color: rgb(245, 17, 17); /* Text fill color */
+    text-align: center; /* Center the text */
+    z-index: 2; /* Ensure the text is on top of the image */
 }
 
 
+/* Adjust positioning for splash title */
+.splash-title {
+    top: 30%; /* Position the title above elevate text */
+}
+
+/* Adjust positioning for elevate text */
+.elevate-text {
+    top: 40%; /* Position the elevate text below the title */
+}
+
+
+/* Style for the centered button */
 .centered-button {
     position: fixed;
-    top: 50%;
-    left: 49.5%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    padding: 15px 30px;
-    font-size: 1.5rem;
-    background-color: rbg (131, 9, 9);
-    color: rgb(106, 114, 238);
-    border: none;
-    border-radius: 5px;
+    bottom: 10%; /* Position the button at the bottom of the screen */
+    left: 50%; /* Center the button horizontally */
+    transform: translateX(-50%); /* Adjust for the width of the button */
+    padding: 15px 30px; /* Adjusted padding for the button */
+    font-size: 1.5rem; /* Adjusted font size for the button */
+    background-color: rgb(131, 9, 9); /* Original background color */
+    color: rgb(221, 65, 65); /* Original text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
     cursor: pointer;
     text-align: center;
 }
 
-
+/* Hover effect for the centered button */
 .centered-button:hover {
-    opacity: 0.9;
+    opacity: 0.9; /* Slightly dim the button on hover */
 }
 
-
-.cart-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: left;
-    height: 150vh; 
+/* Set a light background color for the body */
+body {
+    background-color: #f0f0f0; /* Light grey background color */
 }
 
-.shop-ease-button {
-   
-    padding: 10px 20px;
-    background-color: #ff9800;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .splash-logo {
+        max-width: 80%; /* Adjust logo size */
+    }
+
+    .splash-title, .elevate-text {
+        font-size: 2rem; /* Adjust font size on smaller screens */
+    }
+    
+    .centered-button {
+        font-size: 1rem; /* Adjust button size on smaller screens */
+    }
 }
