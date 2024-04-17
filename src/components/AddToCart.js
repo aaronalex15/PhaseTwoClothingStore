@@ -9,24 +9,20 @@ const AddToCart = ({ id }) => {
 
     return (
         <Link to={`/product/${id}`} style={{ textDecoration: 'none' }}>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <Button
-                    onClick={handleAddToCart}
-                    variant="contained"
-                    color="primary"
-                    style={{
-                        backgroundColor: 'red', 
-                        padding: '10px 20px',
-                        borderRadius: '5px',
-                        fontWeight: 'bold',
-                        fontSize: '14px',
-                    }}
-                    >
-                    Add to Cart
-                </Button>
-            </div>
+            <Button
+                onClick={handleAddToCart}
+                variant="contained"
+                color="primary"
+                sx={{
+                    fontWeight: 'bold',
+                    fontSize: '14px',
+                    // Use MUI's default styles for padding and border-radius
+                }}
+            >
+                Add to Cart
+            </Button>
         </Link>
     );
 };
 
-export default AddToCart; 
+export default AddToCart;
