@@ -58,14 +58,19 @@ function CartPage() {
                     <Typography variant="body2" color="textSecondary" sx={{ marginBottom: 1 }}>
                         Price: ${item.price.toFixed(2)}
                     </Typography>
-                    <Button
-                        variant="contained"
-                        color="secondary"
-                        onClick={() => removeFromCart(index)}
-                        sx={{ marginTop: 1 }}
-                    >
-                        Remove
-                    </Button>
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <Button
+                            variant="contained"
+                            color="secondary"
+                            onClick={() => removeFromCart(index)}
+                                sx={{ 
+                                    fontWeight: 'bold',
+                                    fontSize: '14px',
+                                    color: 'white',
+                                    background: 'red',
+                                    }}
+                            >remove</Button>
+                            </div>
                 </CardContent>
             </Card>
         </Grid>

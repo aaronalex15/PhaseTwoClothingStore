@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
+import "./Style.css";
 
 const AddToCart = ({ id }) => {
     const handleAddToCart = () => {
@@ -14,9 +15,15 @@ const AddToCart = ({ id }) => {
                 variant="contained"
                 color="primary"
                 sx={{
-                    fontWeight: 'bold',
-                    fontSize: '14px',
-                    // Use MUI's default styles for padding and border-radius
+                        backgroundColor: '#D2B48C',
+                        color: 'white',
+                        padding: '10px 20px',
+                        borderRadius: '5px',
+                        fontWeight: 'bold',
+                        fontSize: '14px',
+                        cursor: 'pointer',
+                        border: 'none',
+                
                 }}
             >
                 Add to Cart
