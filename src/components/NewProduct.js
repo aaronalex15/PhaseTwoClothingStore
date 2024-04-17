@@ -78,7 +78,7 @@ function NewProduct() {
                 onClick={toggleFormVisibility}
                 style={{ marginBottom: '16px' }}
             >
-                Add a New Product!
+                Add a similar Product!
             </Button>
 
             {/* Form displayed conditionally in its own container based on formVisible state */}
@@ -117,7 +117,7 @@ function NewProduct() {
                         placeholder="Enter product price"
                     />
                     <Button type="submit" variant="contained" color="primary">
-                        Add Similar Products!
+                        Add Product
                     </Button>
                 </Box>
             )}
