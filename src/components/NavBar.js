@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-testing 
 function NavBar() {
     return (
     <nav className="navbar">
