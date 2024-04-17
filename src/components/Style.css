@@ -21,13 +21,13 @@
 
 .splash-title {
     position: fixed;
-    top: 30%; 
-    left: 39%; 
+    top: 15%; 
+    left: 35%; 
     transform: translate(-50%, -50%); 
     font-family: 'Dancing Script', cursive; 
     -webkit-text-stroke: .1px rgb(33, 168, 201); 
     margin-left: 2in; 
-    font-size: 3rem; 
+    font-size: 6rem; 
     color: black;
     
 
@@ -75,8 +75,8 @@
 /* Elevate Your Shopping Experience text styling */
 .elevate-text {
     position: fixed;
-    top: 375px;
-    left: 360px;
+    top: 180px;
+    left: 50px;
     font-family: 'Dancing Script', cursive; 
     -webkit-text-stroke: .1px rgb(33, 168, 201); 
     margin-left: 2in; 
@@ -92,14 +92,14 @@ body {
 
 .centered-button {
     position: fixed;
-    top: 93%;
+    top: 50%;
     left: 49.5%;
     transform: translate(-50%, -50%);
     z-index: 1;
     padding: 15px 30px;
     font-size: 1.5rem;
     background-color: rbg (131, 9, 9);
-    color: rgb(221, 65, 65);
+    color: rgb(106, 114, 238);
     border: none;
     border-radius: 5px;
     cursor: pointer;
