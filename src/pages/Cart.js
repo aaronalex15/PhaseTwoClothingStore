@@ -7,7 +7,7 @@ import '../components/Style.css';
 function Cart() {
     return (
         <div className="cart-container">
-            <h1 className="main-title">SmoothShop</h1>
+            <h1 className="main-title-cart">SmoothShop</h1>
             
             <Link to="/shop">
                 <Button className="shop-button">SHOP</Button>
