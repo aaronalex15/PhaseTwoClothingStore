@@ -6,14 +6,16 @@ function CartPage() {
     const { id } = useParams();
     const [cartItems, setCartItems] = useState([]);
     const [loading, setLoading] = useState(false);
-    
+
+    // Fetch saved cart items from local storage when component mounts
     useEffect(() => {
         const savedCartItems = JSON.parse(localStorage.getItem('cartItems'));
         if (savedCartItems) {
             setCartItems(savedCartItems);
         }
     }, []);
-    
+
+    // Fetch item details when id changes
     useEffect(() => {
         if (id) {
             setLoading(true);
@@ -29,13 +31,15 @@ function CartPage() {
                 });
         }
     }, [id]);
-    
+
+    // Function to fetch item details based on item ID
     const fetchItemDetails = async (itemId) => {
         const response = await fetch(`https://fakestoreapi.com/products/${itemId}`);
         const data = await response.json();
         return data;
     };
 
+    // Function to remove an item from the cart
     const removeFromCart = (index) => {
         const newCartItems = [...cartItems];
         newCartItems.splice(index, 1);
@@ -43,6 +47,7 @@ function CartPage() {
         localStorage.setItem('cartItems', JSON.stringify(newCartItems));
     };
 
+    // Component to display individual cart item
     const CartItem = ({ item, index }) => (
         <Grid item xs={12} sm={6} md={4} key={index}>
             <Card>
@@ -63,18 +68,25 @@ function CartPage() {
                             variant="contained"
                             color="secondary"
                             onClick={() => removeFromCart(index)}
-                                sx={{ 
-                                    fontWeight: 'bold',
-                                    fontSize: '14px',
-                                    color: 'white',
-                                    background: 'red',
-                                    }}
-                            >remove</Button>
-                            </div>
+                            sx={{
+                                fontWeight: 'bold',
+                                fontSize: '14px',
+                                color: 'white',
+                                background: 'red',
+                            }}
+                        >
+                            Remove
+                        </Button>
+                    </div>
                 </CardContent>
             </Card>
         </Grid>
     );
+
+    // Function to calculate the total price of all cart items
+    const calculateTotalPrice = () => {
+        return cartItems.reduce((total, item) => total + item.price, 0).toFixed(2);
+    };
 
     return (
         <Container sx={{ paddingTop: 4 }}>
@@ -92,6 +104,10 @@ function CartPage() {
                     ))}
                 </Grid>
             )}
+            {/* Display the total price in a container below the items */}
+            <Box sx={{ marginTop: 4, padding: 2, border: '1px solid lightgray', borderRadius: 4 }}>
+                <Typography variant="h6">Total Price: ${calculateTotalPrice()}</Typography>
+            </Box>
         </Container>
     );
 }
