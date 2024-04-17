@@ -1,11 +1,4 @@
-import {
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
-  Button,
-  Grid,
-} from "@mui/material";
+import {Card,CardContent,CardMedia,Typography,Button,Grid,} from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AddToCart from "./AddToCart";
@@ -37,7 +30,6 @@ function Product({ product }) {
           <AddToCart id={product.id} />
         </CardContent>
       </Card>
-      <NewProduct />
     </Grid>
   );
 }
@@ -98,6 +90,7 @@ function ProductList({ selectedProduct }) {
           productList.map((product) => <Product product={product} />)
         )}
       </Grid>
+      <NewProduct />
     </div>
   );
 }
