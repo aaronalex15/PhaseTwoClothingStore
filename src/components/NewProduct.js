@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import {
-    TextField,
-    Button,
-    Container,
-    Box,
-    FormControl,
-} from '@mui/material';
+import { TextField,  Button, Container, Box,} from '@mui/material';
 
 function NewProduct({ addProduct }) {
     // Initial state for the new product

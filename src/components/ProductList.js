@@ -1,7 +1,7 @@
-import {Card,CardContent,CardMedia,Typography,Button,Grid,} from "@mui/material";
-import React, { useState, useEffect } from "react";
+import {Card,CardContent,CardMedia,Typography,Grid,} from "@mui/material";
+import React, { useEffect } from "react";
 import AddToCart from "./AddToCart";
-import NewProduct from "./NewProduct";
+
 
 function Product({ product }) {
   return (
@@ -34,8 +34,6 @@ function Product({ product }) {
 }
 
 function ProductList({ selectedProduct, productList, setProductList }) {
- 
-
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products") // http request made to url
@@ -89,7 +87,6 @@ function ProductList({ selectedProduct, productList, setProductList }) {
           productList.map((product) => <Product product={product} key={product.id} />)
         )}
       </Grid>
-     
     </div>
   );
 }
