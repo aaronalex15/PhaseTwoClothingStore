@@ -1,67 +1,55 @@
 import React, { useState } from 'react';
-import { TextField, Button, Container, Box } from '@mui/material';
+import {
+    TextField,
+    Button,
+    Container,
+    Box,
+    FormControl,
+} from '@mui/material';
 
-function NewProduct() {
-    // State to manage the form data
-    const [formData, setFormData] = useState({
+function NewProduct({ addProduct }) {
+    // Initial state for the new product
+    const initialState = {
         title: '',
         category: '',
         price: '',
-    });
+        description: '',
+        image: '',
+    };
 
-    // State to manage the form visibility
+    // State variables for managing the new product
+    const [newProduct, setNewProduct] = useState(initialState);
     const [formVisible, setFormVisible] = useState(false);
 
-    // Handle input changes
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormData((prevFormData) => ({
-            ...prevFormData,
-            [name]: value,
-        }));
+    // Handle input changes for the form fields
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setNewProduct({ ...newProduct, [name]: value });
     };
 
     // Handle form submission
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-        // Construct the payload with the form data
-        const payload = {
-            title: formData.title,
-            category: formData.category,
-            price: formData.price,
-        };
+        fetch("https://fakestoreapi.com/products", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                title: newProduct.title,
+                image: newProduct.image,
+                category: newProduct.category,
+                price: newProduct.price,
+                description: newProduct.description
+            }),
+        })
+        .then((response) => response.json())
+        .then((products) => {
+            addProduct(products);
+        });
 
-        try {
-            // Make a POST request to the specified URL
-            const response = await fetch('https://fakestoreapi.com/products', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(payload),
-            });
-
-            // Check if the response is successful
-            if (response.ok) {
-                const result = await response.json();
-                console.log('Item added successfully:', result);
-
-                // Reset the form data and hide the form after successful submission
-                setFormData({
-                    title: '',
-                    category: '',
-                    price: '',
-                });
-
-                // Hide the form
-                setFormVisible(false);
-            } else {
-                console.error('Failed to add item:', response.statusText);
-            }
-        } catch (error) {
-            console.error('Error adding item:', error);
-        }
+        // Reset the form after submission
+        setNewProduct(initialState);
+        setFormVisible(false);
     };
 
     // Function to toggle form visibility
@@ -72,52 +60,56 @@ function NewProduct() {
     return (
         <Container>
             {/* Button to toggle form visibility */}
-            <Button
-                variant="contained"
-                color="primary"
-                onClick={toggleFormVisibility}
-                style={{ marginBottom: '16px' }}
-            >
-                Add a similar Product!
+            <Button variant="contained" color="primary" onClick={toggleFormVisibility}>
+                {formVisible ? 'Hide Form' : 'Show Form'}
             </Button>
 
-            {/* Form displayed conditionally in its own container based on formVisible state */}
+            {/* Conditionally render the form */}
             {formVisible && (
-                <Box
-                    component="form"
-                    onSubmit={handleSubmit}
-                    style={{ marginBottom: '16px', padding: '16px', border: '1px solid #ccc', borderRadius: '4px' }}
-                >
+                <Box component="form" onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
                     <TextField
+                        fullWidth
                         label="Title"
                         name="title"
-                        value={formData.title}
+                        value={newProduct.title}
                         onChange={handleChange}
                         margin="normal"
-                        fullWidth
-                        placeholder="Enter product title"
                     />
                     <TextField
+                        fullWidth
                         label="Category"
                         name="category"
-                        value={formData.category}
+                        value={newProduct.category}
                         onChange={handleChange}
                         margin="normal"
-                        fullWidth
-                        placeholder="Enter product category"
                     />
                     <TextField
+                        fullWidth
                         label="Price"
                         name="price"
                         type="number"
-                        value={formData.price}
+                        value={newProduct.price}
                         onChange={handleChange}
                         margin="normal"
+                    />
+                    <TextField
                         fullWidth
-                        placeholder="Enter product price"
+                        label="Description"
+                        name="description"
+                        value={newProduct.description}
+                        onChange={handleChange}
+                        margin="normal"
+                    />
+                    <TextField
+                        fullWidth
+                        label="Image URL"
+                        name="image"
+                        value={newProduct.image}
+                        onChange={handleChange}
+                        margin="normal"
                     />
                     <Button type="submit" variant="contained" color="primary">
-                        Add Product
+                        Submit
                     </Button>
                 </Box>
             )}
