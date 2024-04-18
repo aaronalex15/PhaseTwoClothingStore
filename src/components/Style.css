@@ -23,11 +23,8 @@ body, h1, h2, h3, p, button {
     margin: 0 auto; /* Center the image horizontally */
 }
 
-/* Style for splash title and elevate text */
-/* Style for splash title */
 .splash-title {
     position: absolute; /* Use absolute positioning */
-    top: 30%; /* Position the title above the elevate text */
     left: 50%; /* Center the text horizontally */
     transform: translateX(-50%); /* Adjust for the width of the element */
     font-family: 'Caveat', cursive; /* Use an elegant cursive font */
@@ -43,7 +40,6 @@ body, h1, h2, h3, p, button {
 /* Style for elevate text */
 .elevate-text {
     position: absolute;
-    top: 40%; /* Position the elevate text below the title */
     left: 50%; /* Center the text horizontally */
     transform: translateX(-50%); /* Adjust for the width of the element */
     font-family: 'Caveat', cursive; /* Use an elegant cursive font */
@@ -56,7 +52,7 @@ body, h1, h2, h3, p, button {
 
 /* Adjust positioning for splash title */
 .splash-title {
-    top: 30%; /* Position the title above elevate text */
+    top: 20%; /* Position the title above elevate text */
 }
 
 /* Adjust positioning for elevate text */
