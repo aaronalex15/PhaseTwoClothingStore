@@ -10,7 +10,7 @@ function NewProduct({ addProduct }) {
         description: '',
         image: '',
     };
-
+    
     // State variables for managing the new product
     const [newProduct, setNewProduct] = useState(initialState);
     const [formVisible, setFormVisible] = useState(false);
@@ -55,13 +55,14 @@ const handleSubmit = (e) => {
         setFormVisible(!formVisible);
     };
 
+    const titleError = newProduct.title.length < 3 ? <p>Title must have at least 3 characters!</p> : ""
+
     return (
         <Container>
             {/* Button to toggle form visibility */}
             <Button variant="contained" color="primary" onClick={toggleFormVisibility}>
                 {formVisible ? 'Hide Form' : 'Show Form'}
             </Button>
-
             {/* Conditionally render the form */}
             {formVisible && (
                 <Box component="form" onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
@@ -73,6 +74,7 @@ const handleSubmit = (e) => {
                         onChange={handleChange}
                         margin="normal"
                     />
+                    {titleError}
                     <TextField
                         fullWidth
                         label="Category"

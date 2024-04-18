@@ -6,8 +6,6 @@ body, h1, h2, h3, p, button {
     font-family: 'Roboto', sans-serif;
 }
 
-/* Container to center content */
-/* Style for the flex container */
 .splash-container {
     display: flex; /* Set container as a flex container */
     justify-content: center; /* Center items horizontally */
@@ -15,32 +13,33 @@ body, h1, h2, h3, p, button {
     height: 100vh; /* Make the container take up the full height of the viewport */
 }
 
-/* Style for the image */
 .splash-logo {
-    max-width: 90%; /* Prevent the image from exceeding its natural width */
-    height: auto; /* Maintain the aspect ratio of the image */
+    max-width: 90%; 
+    max-height: 90%;
+
     display: block;
-    margin: 0 auto; /* Center the image horizontally */
+    margin: 0 auto; 
 }
 
 .splash-title {
     position: absolute; /* Use absolute positioning */
-    left: 50%; /* Center the text horizontally */
+    left: 50%;
+    top: 20%; 
     transform: translateX(-50%); /* Adjust for the width of the element */
     font-family: 'Caveat', cursive; /* Use an elegant cursive font */
-    font-size: 4rem; /* Increase font size for a bolder appearance */
+    font-size: 5rem; /* Increase font size for a bolder appearance */
     font-weight: 600; /* Increase font weight for prominence */
     color: black; /* Text fill color for contrast against the background */
     text-align: center; /* Center the text */
     -webkit-text-stroke: 1px white; /* Text stroke in white for Chrome and Safari */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for depth */
-    z-index: 2; /* Ensure the title is on top of the image */
 }
 
 /* Style for elevate text */
 .elevate-text {
     position: absolute;
-    left: 50%; /* Center the text horizontally */
+    left: 50%; 
+    top: 40%;
     transform: translateX(-50%); /* Adjust for the width of the element */
     font-family: 'Caveat', cursive; /* Use an elegant cursive font */
     font-size: 2rem; /* Adjust the font size as desired */
@@ -49,22 +48,9 @@ body, h1, h2, h3, p, button {
     z-index: 2; /* Ensure the text is on top of the image */
 }
 
-
-/* Adjust positioning for splash title */
-.splash-title {
-    top: 20%; /* Position the title above elevate text */
-}
-
-/* Adjust positioning for elevate text */
-.elevate-text {
-    top: 40%; /* Position the elevate text below the title */
-}
-
-
-/* Style for the centered button */
 .centered-button {
     position: fixed;
-    bottom: 10%; /* Position the button at the bottom of the screen */
+    bottom: 30%; /* Position the button at the bottom of the screen */
     left: 50%; /* Center the button horizontally */
     transform: translateX(-50%); /* Adjust for the width of the button */
     padding: 15px 30px; /* Adjusted padding for the button */

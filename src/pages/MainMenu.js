@@ -16,7 +16,7 @@ import NewProduct from "../components/NewProduct";
     
     return (
         <div className="Home">
-            <h1 className="main-title">SmoothShop</h1>
+            <h1 className="main-title-menu">SmoothShop</h1>
             
             <Link to="/product/:id">
                 <Button className="shop-button">Checkout</Button>
