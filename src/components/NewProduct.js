@@ -27,30 +27,34 @@ function NewProduct({ addProduct }) {
         setNewProduct({ ...newProduct, [name]: value });
     };
 
-    // Handle form submission
-    const handleSubmit = (e) => {
-        e.preventDefault();
+  // Handle form submission
+const handleSubmit = (e) => {
+    e.preventDefault();
 
-        fetch("https://fakestoreapi.com/products", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                title: newProduct.title,
-                image: newProduct.image,
-                category: newProduct.category,
-                price: newProduct.price,
-                description: newProduct.description
-            }),
-        })
-        .then((response) => response.json())
-        .then((products) => {
-            addProduct(products);
-        });
+    fetch("https://fakestoreapi.com/products", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            title: newProduct.title,
+            image: newProduct.image,
+            category: newProduct.category,
+            price: newProduct.price,
+            description: newProduct.description,
+        }),
+    })
+    .then((response) => response.json())
+    .then((products) => {
+        addProduct(products);
+        console.log("POST request was successful:", products);
+    })
+    .catch((error) => {
+        console.error("There was an error with the POST request:", error);
+    });
 
-        // Reset the form after submission
-        setNewProduct(initialState);
-        setFormVisible(false);
-    };
+    // Reset the form after submission
+    setNewProduct(initialState);
+    setFormVisible(false);
+};
 
     // Function to toggle form visibility
     const toggleFormVisibility = () => {
