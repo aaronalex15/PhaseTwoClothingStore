@@ -33,9 +33,9 @@ function Product({ product }) {
   );
 }
 
-function ProductList({ selectedProduct }) {
-  //takes selectedProduct as a prop
-  const [productList, setProductList] = useState([]); // manage the state of productList
+function ProductList({ selectedProduct, productList, setProductList }) {
+ 
+
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products") // http request made to url
@@ -86,10 +86,10 @@ function ProductList({ selectedProduct }) {
             </Card>
           </Grid>
         ) : (
-          productList.map((product) => <Product product={product} />)
+          productList.map((product) => <Product product={product} key={product.id} />)
         )}
       </Grid>
-      <NewProduct />
+     
     </div>
   );
 }
