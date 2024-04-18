@@ -3,7 +3,6 @@ import { Container, Button } from "@mui/material";
 import CartPage from '../components/CartPage';
 import '../components/Style.css'; 
 
-
 function Cart() {
     return (
         <div className="cart-container">
@@ -21,7 +20,6 @@ function Cart() {
                 <br />
                 <CartPage />
                 <br />
-            
             </Container>
         </div>
     );
