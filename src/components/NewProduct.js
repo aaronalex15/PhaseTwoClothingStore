@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
 import { TextField,  Button, Container, Box,} from '@mui/material';
+import React, { useState } from 'react';
 
+
+
+// Initial state for the new product
 function NewProduct({ addProduct }) {
-    // Initial state for the new product
     const initialState = {
         title: '',
         category: '',
@@ -14,17 +16,17 @@ function NewProduct({ addProduct }) {
     // State variables for managing the new product
     const [newProduct, setNewProduct] = useState(initialState);
     const [formVisible, setFormVisible] = useState(false);
-
+    
     // Handle input changes for the form fields
     const handleChange = (e) => {
         const { name, value } = e.target;
         setNewProduct({ ...newProduct, [name]: value });
     };
-
+    
   // Handle form submission
 const handleSubmit = (e) => {
     e.preventDefault();
-
+    
     fetch("https://fakestoreapi.com/products", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -44,19 +46,19 @@ const handleSubmit = (e) => {
     .catch((error) => {
         console.error("There was an error with the POST request:", error);
     });
-
+    
     // Reset the form after submission
     setNewProduct(initialState);
     setFormVisible(false);
 };
-
+    
     // Function to toggle form visibility
     const toggleFormVisibility = () => {
         setFormVisible(!formVisible);
     };
-
+    
     const titleError = newProduct.title.length < 3 ? <p>Title must have at least 3 characters!</p> : ""
-
+    
     return (
         <Container>
             {/* Button to toggle form visibility */}

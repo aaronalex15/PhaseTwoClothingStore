@@ -5,6 +5,8 @@ import ProductList from "../components/ProductList";
 import Search from "../components/Search";
 import NewProduct from "../components/NewProduct";
 
+
+
     function MainMenu() {
     const [productList, setProductList] = useState([]);
     
@@ -37,5 +39,6 @@ import NewProduct from "../components/NewProduct";
         </div>
     );
 }
+
 
 export default MainMenu;

@@ -1,7 +1,7 @@
-import React from "react";
 import MainMenu from "./pages/MainMenu";
 import Splash from "./pages/Splash";
 import Cart from "./pages/Cart";
+
 
 const routes = [
   {
@@ -17,5 +17,6 @@ const routes = [
     element: <Cart />
   }
 ];
+
 
 export default routes;

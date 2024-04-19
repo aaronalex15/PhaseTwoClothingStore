@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
 import { Card, CardMedia, CardContent, Typography } from '@mui/material';
+import React, { useState, useEffect } from 'react';
 import AddToCart from './AddToCart';
 
 
