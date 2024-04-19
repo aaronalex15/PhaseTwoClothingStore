@@ -6,6 +6,11 @@ body, h1, h2, h3, p, button {
     font-family: 'Roboto', sans-serif;
 }
 
+/* Set a light background color for the body */
+body {
+    background-color: #f0f0f0; /* Light grey background color */
+}
+
 .splash-container {
     display: flex; /* Set container as a flex container */
     justify-content: center; /* Center items horizontally */
@@ -24,7 +29,7 @@ body, h1, h2, h3, p, button {
 .splash-title {
     position: absolute; /* Use absolute positioning */
     left: 50%;
-    top: 20%; 
+    top: 10%; 
     transform: translateX(-50%); /* Adjust for the width of the element */
     font-family: 'Caveat', cursive; /* Use an elegant cursive font */
     font-size: 5rem; /* Increase font size for a bolder appearance */
@@ -39,7 +44,7 @@ body, h1, h2, h3, p, button {
 .elevate-text {
     position: absolute;
     left: 50%; 
-    top: 40%;
+    top: 33%;
     transform: translateX(-50%); /* Adjust for the width of the element */
     font-family: 'Caveat', cursive; /* Use an elegant cursive font */
     font-size: 2rem; /* Adjust the font size as desired */
@@ -68,21 +73,12 @@ body, h1, h2, h3, p, button {
     opacity: 0.9; /* Slightly dim the button on hover */
 }
 
-/* Set a light background color for the body */
-body {
-    background-color: #f0f0f0; /* Light grey background color */
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .splash-logo {
         max-width: 80%; /* Adjust logo size */
     }
 
-    .splash-title, .elevate-text {
-        font-size: 2rem; /* Adjust font size on smaller screens */
-    }
-    
     .centered-button {
         font-size: 1rem; /* Adjust button size on smaller screens */
     }

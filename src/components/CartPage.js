@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Typography, Grid, Card, CardContent, CardMedia, Button, CircularProgress, Box } from '@mui/material';
 
+
+
 function CartPage() {
     const { id } = useParams();
     const [cartItems, setCartItems] = useState([]);

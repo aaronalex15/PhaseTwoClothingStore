@@ -3,6 +3,8 @@ import logo from "../components/splashCover.png";
 import { Link } from "react-router-dom";
 import '../components/Style.css'; 
 
+
+
 function Splash() {
     return (
         <div className="splash-container">
