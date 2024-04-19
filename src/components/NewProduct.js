@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField,  Button, Container, Box,} from '@mui/material';
+import { TextField, Button, Container, Box } from '@mui/material';
 
 function NewProduct({ addProduct }) {
     // Initial state for the new product
@@ -17,51 +17,54 @@ function NewProduct({ addProduct }) {
 
     // Handle input changes for the form fields
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setNewProduct({ ...newProduct, [name]: value });
+        setNewProduct({ ...newProduct, [e.target.name]: e.target.value });
     };
 
-  // Handle form submission
-const handleSubmit = (e) => {
-    e.preventDefault();
+    // Handle form submission
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        addProduct({title: newProduct.title, category: newProduct.category, price: newProduct.price, description: newProduct.description, image: newProduct.image});
+    
+        fetch("https://fakestoreapi.com/products", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                title: newProduct.title,
+                image: newProduct.image,
+                category: newProduct.category,
+                price: newProduct.price,
+                description: newProduct.description,
+            }),
+        })
+        .then((response) => response.json())
+        .then((products) => {
+            addProduct(products);
+            console.log("POST request was successful:", products);
+        })
+        .catch((error) => {
+            console.error("There was an error with the POST request:", error);
+        });
 
-    fetch("https://fakestoreapi.com/products", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            title: newProduct.title,
-            image: newProduct.image,
-            category: newProduct.category,
-            price: newProduct.price,
-            description: newProduct.description,
-        }),
-    })
-    .then((response) => response.json())
-    .then((products) => {
-        addProduct(products);
-        console.log("POST request was successful:", products);
-    })
-    .catch((error) => {
-        console.error("There was an error with the POST request:", error);
-    });
-
-    // Reset the form after submission
-    setNewProduct(initialState);
-    setFormVisible(false);
-};
+        // Reset the form after submission
+        setNewProduct(initialState);
+        setFormVisible(false);
+    };
 
     // Function to toggle form visibility
     const toggleFormVisibility = () => {
         setFormVisible(!formVisible);
     };
 
-    const titleError = newProduct.title.length < 3 ? <p>Title must have at least 3 characters!</p> : ""
+    // Error message for title length
+    const titleError = newProduct.title.length < 3 ? (
+        <p style={{ color: 'red' }}>Title must have at least 3 characters!</p>
+    ) : "";
 
     return (
         <Container>
             {/* Button to toggle form visibility */}
             <Button variant="contained" color="primary" onClick={toggleFormVisibility}>
-                {formVisible ? 'Hide Form' : 'Show Form'}
+                {formVisible ? 'Hide Form' : 'Add Product'}
             </Button>
             {/* Conditionally render the form */}
             {formVisible && (
@@ -108,6 +111,12 @@ const handleSubmit = (e) => {
                         onChange={handleChange}
                         margin="normal"
                     />
+                    {/* Image preview based on the provided URL */}
+                    {newProduct.image && (
+                        <Box mt={2}>
+                            <img src={newProduct.image} alt="Product" style={{ width: '100px', height: 'auto' }} />
+                        </Box>
+                    )}
                     <Button type="submit" variant="contained" color="primary">
                         Submit
                     </Button>
