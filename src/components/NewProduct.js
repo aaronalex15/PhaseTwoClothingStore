@@ -8,45 +8,40 @@ function NewProduct({ addProduct }) {
         category: '',
         price: '',
         description: '',
-        imageFile: null, // Updated state to hold the image file
+        image: '',
     };
-
+    
     // State variables for managing the new product
     const [newProduct, setNewProduct] = useState(initialState);
     const [formVisible, setFormVisible] = useState(false);
 
     // Handle input changes for the form fields
     const handleChange = (e) => {
-        const { name, value, files } = e.target;
-        
-        if (name === 'imageFile') {
-            setNewProduct({ ...newProduct, [name]: files[0] });
-        } else {
-            setNewProduct({ ...newProduct, [name]: value });
-        }
+        setNewProduct({ ...newProduct, [e.target.name]: e.target.value });
     };
 
     // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        
-        const formData = new FormData();
-        formData.append('title', newProduct.title);
-        formData.append('category', newProduct.category);
-        formData.append('price', newProduct.price);
-        formData.append('description', newProduct.description);
-        formData.append('image', newProduct.imageFile); // Append the image file
-
+        addProduct({title: newProduct.title, category: newProduct.category, price: newProduct.price, description: newProduct.description, image: newProduct.image});
+    
         fetch("https://fakestoreapi.com/products", {
             method: "POST",
-            body: formData,
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                title: newProduct.title,
+                image: newProduct.image,
+                category: newProduct.category,
+                price: newProduct.price,
+                description: newProduct.description,
+            }),
         })
-        .then(response => response.json())
-        .then(products => {
+        .then((response) => response.json())
+        .then((products) => {
             addProduct(products);
             console.log("POST request was successful:", products);
         })
-        .catch(error => {
+        .catch((error) => {
             console.error("There was an error with the POST request:", error);
         });
 
@@ -63,7 +58,7 @@ function NewProduct({ addProduct }) {
     // Error message for title length
     const titleError = newProduct.title.length < 3 ? (
         <p style={{ color: 'red' }}>Title must have at least 3 characters!</p>
-    ) : '';
+    ) : "";
 
     return (
         <Container>
@@ -108,20 +103,18 @@ function NewProduct({ addProduct }) {
                         onChange={handleChange}
                         margin="normal"
                     />
-                    {/* Updated file input for the image */}
                     <TextField
                         fullWidth
-                        type="file"
-                        label="Image"
-                        name="imageFile"
+                        label="Image URL"
+                        name="image"
+                        value={newProduct.image}
                         onChange={handleChange}
                         margin="normal"
-                        InputLabelProps={{ shrink: true }}
                     />
-                    {/* Image preview based on the uploaded file */}
-                    {newProduct.imageFile && (
+                    {/* Image preview based on the provided URL */}
+                    {newProduct.image && (
                         <Box mt={2}>
-                            <img src={URL.createObjectURL(newProduct.imageFile)} alt="Product" style={{ width: '100px', height: 'auto' }} />
+                            <img src={newProduct.image} alt="Product" style={{ width: '100px', height: 'auto' }} />
                         </Box>
                     )}
                     <Button type="submit" variant="contained" color="primary">
